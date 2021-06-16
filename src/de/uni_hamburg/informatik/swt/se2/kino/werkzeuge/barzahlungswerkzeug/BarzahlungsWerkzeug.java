@@ -1,12 +1,49 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlungswerkzeug;
 
-public class BarzahlungsWerkzeug {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.ObservableSubwerkzeug;
+
+public class BarzahlungsWerkzeug extends ObservableSubwerkzeug {
+
+	private BarzahlungsWerkzeugUI _ui;
+
+	public void barzahlungStarten(int geldbetrag) {
+		_ui = new BarzahlungsWerkzeugUI();
+		registriereUIAktionen(_ui);
+	}
 
 	/**
-	 * Initialisiert dieses Werkzeug. Das initial ausgewählte Datum ist der heutige
-	 * Tag.
+	 * Verbindet die fachlichen Aktionen mit den Interaktionselementen der
+	 * graphischen Benutzungsoberfläche.
 	 */
-	public BarzahlungsWerkzeug() {
+	private void registriereUIAktionen(BarzahlungsWerkzeugUI ui) {
+		ui.getOkButton().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				okButtonPressed();
+			}
+		});
 
+//		ui.getAbbrechenButton().addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				abbrechenButtonPressed();
+//			}
+//		});
+	}
+
+	private void okButtonPressed() {
+		informiereUeberAenderung();
+	}
+
+//	private void abbrechenButtonPressed() {
+//
+//	}
+
+	private void preisInputChanged() {
+		// TODO: Checken ob der OK-Button im UI ausgegraut sein muss
+		// TODO: Restbetrag in UI updaten
 	}
 }
