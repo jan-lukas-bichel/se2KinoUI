@@ -74,6 +74,7 @@ public class BarzahlungsWerkzeugUI extends JDialog {
 	private void zeigeGUIan() {
 		// setsize of dialog
 		_frame.setSize(450, 700);
+		_frame.setVisible(true);
 		_frame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		_frame.pack();
 
@@ -132,9 +133,9 @@ public class BarzahlungsWerkzeugUI extends JDialog {
 	/**
 	 * Erzeugt den OK-Button
 	 */
-	public void erzeugeOK() {
+	private void erzeugeOK() {
 		_ok = new JButton("OK");
-		_ok.setEnabled(false);
+		toggleOkButtonOff();
 		_buttonPanel.add(_ok);
 
 	}
@@ -142,9 +143,23 @@ public class BarzahlungsWerkzeugUI extends JDialog {
 	/**
 	 * Erzeugt den Abbrechen-Button
 	 */
-	public void erzeugeAbbrechen() {
+	private void erzeugeAbbrechen() {
 		_abbrechen = new JButton("Abbrechen");
 		_buttonPanel.add(_abbrechen);
+	}
+
+	/**
+	 * Aktiviert den Ok-Button
+	 */
+	public void toggleOkButtonOn() {
+		_ok.setEnabled(true);
+	}
+
+	/**
+	 * Deaktiviert den Ok-Button
+	 */
+	public void toggleOkButtonOff() {
+		_ok.setEnabled(false);
 	}
 
 	/**
@@ -171,13 +186,13 @@ public class BarzahlungsWerkzeugUI extends JDialog {
 		return _abbrechen;
 	}
 
-	/**
-	 * 
-	 * @return das JTextField, das den Preis anzeigt
-	 */
-	public JTextField getAnzeigePreis() {
-		return _anzeigePreis;
-	}
+//	/**
+//	 * 
+//	 * @return das JTextField, das den Preis anzeigt
+//	 */
+//	public JTextField getAnzeigePreis() {
+//		return _anzeigePreis;
+//	}
 
 	/**
 	 * 
@@ -202,12 +217,4 @@ public class BarzahlungsWerkzeugUI extends JDialog {
 	public int getBetrag() {
 		return Integer.parseInt(_eingabeBetrag.getText());
 	}
-
-	/**
-	 * sorgt dafür, dass der Dialog sichtbar wird
-	 */
-	public void macheDialogSichtbar() {
-		_frame.setVisible(true);
-	}
-
 }
