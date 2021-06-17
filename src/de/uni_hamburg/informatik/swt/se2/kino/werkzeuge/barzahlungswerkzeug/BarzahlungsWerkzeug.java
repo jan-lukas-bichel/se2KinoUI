@@ -10,8 +10,9 @@ public class BarzahlungsWerkzeug extends ObservableSubwerkzeug {
 	private BarzahlungsWerkzeugUI _ui;
 
 	public void barzahlungStarten(int geldbetrag) {
-		_ui = new BarzahlungsWerkzeugUI();
+		_ui = new BarzahlungsWerkzeugUI(geldbetrag);
 		registriereUIAktionen(_ui);
+		_ui.macheDialogSichtbar();
 	}
 
 	/**

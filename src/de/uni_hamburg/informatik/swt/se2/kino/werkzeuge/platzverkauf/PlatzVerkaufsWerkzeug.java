@@ -118,10 +118,10 @@ public class PlatzVerkaufsWerkzeug {
 	 */
 	private void aktualisierePreisanzeige(Set<Platz> plaetze) {
 		if (istVerkaufenMoeglich(plaetze)) {
-			int _preis = _vorstellung.getPreisFuerPlaetze(plaetze);
+			_preis = _vorstellung.getPreisFuerPlaetze(plaetze);
 			_ui.getPreisLabel().setText("Gesamtpreis: " + _preis + " Eurocent");
 		} else if (istStornierenMoeglich(plaetze)) {
-			int preis = _vorstellung.getPreisFuerPlaetze(plaetze);
+			_preis = _vorstellung.getPreisFuerPlaetze(plaetze);
 			_ui.getPreisLabel().setText("Gesamtstorno: " + _preis + " Eurocent");
 		} else if (!plaetze.isEmpty()) {
 			_ui.getPreisLabel().setText("Verkauf und Storno nicht gleichzeitig möglich!");
