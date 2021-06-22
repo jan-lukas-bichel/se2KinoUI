@@ -80,14 +80,14 @@ public class KassenWerkzeug
         });
 
         _vorstellungAuswaehlWerkzeug
-                .registriereBeobachter(new SubwerkzeugObserver()
+            .registriereBeobachter(new SubwerkzeugObserver()
+            {
+                @Override
+                public void reagiereAufAenderung()
                 {
-                    @Override
-                    public void reagiereAufAenderung()
-                    {
-                        setzeAusgewaehlteVorstellung();
-                    }
-                });
+                    setzeAusgewaehlteVorstellung();
+                }
+            });
     }
 
     /**
@@ -95,14 +95,15 @@ public class KassenWerkzeug
      */
     private void registriereUIAktionen()
     {
-        _ui.getBeendenButton().addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
+        _ui.getBeendenButton()
+            .addActionListener(new ActionListener()
             {
-                reagiereAufBeendenButton();
-            }
-        });
+                @Override
+                public void actionPerformed(ActionEvent e)
+                {
+                    reagiereAufBeendenButton();
+                }
+            });
     }
 
     /**
