@@ -46,28 +46,6 @@ public class PlatzVerkaufsWerkzeug
     }
 
     /**
-     * Erzeugt und registriert die Beobachter, die die Subwerkzeuge beobachten.
-     */
-    //    private void erzeugeListenerFuerSubwerkzeuge()
-    //    {
-    //        _barzahlungsWerkzeug.registriereBeobachter(new SubwerkzeugObserver()
-    //        {
-    //            @Override
-    //            public void reagiereAufAenderung()
-    //            {
-    //                if (_barzahlungsWerkzeug.getOkButtonGedrueckt())
-    //                {
-    //                    verkaufePlaetze(_vorstellung);
-    //                }
-    //                if (_barzahlungsWerkzeug.getAbbrechenButtonGedrueckt())
-    //                {
-    //                    _barzahlungsWerkzeug.schließeFenster();
-    //                }
-    //            }
-    //        });
-    //    }
-
-    /**
      * Gibt das Panel dieses Subwerkzeugs zurück. Das Panel sollte von einem
      * Kontextwerkzeug eingebettet werden.
      * 
@@ -123,16 +101,6 @@ public class PlatzVerkaufsWerkzeug
                 }
             });
     }
-
-    /**
-     * Startet die Barzahlung.
-     */
-    //    private void fuehreBarzahlungDurch()
-    //    {
-    //        System.out.println("Fuehere Barzahlung durch");
-    //        // _barzahlungsWerkzeug = new BarzahlungsWerkzeug();
-    //        _barzahlungsWerkzeug.barzahlungStarten(_preis);
-    //    }
 
     /**
      * Reagiert darauf, dass sich die Menge der ausgewählten Plätze geändert hat.
