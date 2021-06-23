@@ -256,11 +256,20 @@ public class BarzahlungsWerkzeugUI extends JDialog
         _eingabeRestbetrag.setText(formatiereString(betrag));
     }
 
+    /**
+     * Schließt das Fenster
+     */
     public void schließeFenster()
     {
         _frame.dispose();
     }
 
+    /**
+     * Formatiert den Geldbetrag
+     * 
+     * @param betrag der Geldbetrag, der übergeben wird
+     * @return den formatierten Geldbetrag
+     */
     public String formatiereString(int betrag)
     {
         String res;
