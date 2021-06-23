@@ -246,21 +246,40 @@ public class BarzahlungsWerkzeugUI extends JDialog
         return Integer.parseInt(_eingabeBetrag.getText());
     }
 
+    /**
+     * Zeigt den übergebenen Geldetrag als gezahlen Geldbetrag an
+     * 
+     * * @param betrag der Geldbetrag, der übergeben wird
+     */
     public void setTextfeldeingabeBetrag(int betrag)
     {
         _eingabeBetrag.setText(formatiereString(betrag));
     }
 
+    /**
+     * Zeigt den übergebenen Betrag als Restbetrag an
+     * 
+     * * @param betrag der Geldbetrag, der übergeben wird
+     */
     public void setTextfeldRestbetrag(int betrag)
     {
         _eingabeRestbetrag.setText(formatiereString(betrag));
     }
 
+    /**
+     * Schließt das Fenster
+     */
     public void schließeFenster()
     {
         _frame.dispose();
     }
 
+    /**
+     * Formatiert den Geldbetrag
+     * 
+     * @param betrag der Geldbetrag, der übergeben wird
+     * @return den formatierten Geldbetrag
+     */
     public String formatiereString(int betrag)
     {
         String res;
