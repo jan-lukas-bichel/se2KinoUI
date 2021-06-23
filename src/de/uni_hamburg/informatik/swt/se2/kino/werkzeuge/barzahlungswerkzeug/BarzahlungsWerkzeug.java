@@ -75,12 +75,18 @@ public class BarzahlungsWerkzeug
 
     }
 
+    /*
+     * Berechnet und setzt den rest Betrag
+     */
     private void restBetragBerechnen()
     {
         _restBetrag = _preis - _ui.getBetrag();
         _ui.setTextfeldRestbetrag(_restBetrag);
     }
 
+    /*
+     * Wird ausgeführt sobald der okButton gedrückt wurde
+     */
     private void okButtonPressed()
     {
         _okButtonGedrueckt = true;
@@ -88,11 +94,17 @@ public class BarzahlungsWerkzeug
         System.out.println("Hallo der Button wurde gedruckt");
     }
 
+    /*
+     * Wird ausgeführt sobald der abbrechenButton gedrückt wurde
+     */
     private void abbrechenButtonPressed()
     {
         _ui.schließeFenster();
     }
 
+    /*
+     * Prüft ob der Restbetrag <= 0 ist und schaltet dann den okButton frei
+     */
     private void betragInputChanged()
     {
         if (_restBetrag > 0)
@@ -103,9 +115,12 @@ public class BarzahlungsWerkzeug
         {
             _ui.toggleOkButtonOn();
         }
-        restBetragBerechnen();
+        //restBetragBerechnen();
     }
 
+    /*
+     * Gibt zurück ob der okButton gedrückt wurde
+     */
     public boolean getOkButtonGedrueckt()
     {
         return _okButtonGedrueckt;
